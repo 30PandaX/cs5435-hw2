@@ -25,6 +25,7 @@ def profile(db, session, username):
         "profile",
         user=user,
         session_user=session_user,
+        session_token=session.get_id(),
     )
 
 @post('/aboutme')
@@ -38,4 +39,3 @@ def update_aboutme(db, session):
         user=user,
         session_user=user,
     )
-
