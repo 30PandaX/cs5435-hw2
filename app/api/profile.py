@@ -38,4 +38,5 @@ def update_aboutme(db, session):
         "profile",
         user=user,
         session_user=user,
+        session_token=session.get_id(),
     )

